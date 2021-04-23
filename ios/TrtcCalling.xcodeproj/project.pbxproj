@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33F81F731346321D86C6505A /* Pods_TrtcCalling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99BD00CC1757CF75B735C1FC /* Pods_TrtcCalling.framework */; };
-		F4FF95D7245B92E800C19C63 /* TrtcCalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* TrtcCalling.swift */; };
+		F64A35CC2632CFFE00FB7E66 /* TrtcCalling.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* TrtcCalling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,7 @@
 		86ADD8BC20CB9DCA155C794D /* Pods-TrtcCalling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrtcCalling.release.xcconfig"; path = "Target Support Files/Pods-TrtcCalling/Pods-TrtcCalling.release.xcconfig"; sourceTree = "<group>"; };
 		99BD00CC1757CF75B735C1FC /* Pods_TrtcCalling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrtcCalling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5891CC2AC0600A0062D /* TrtcCalling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrtcCalling.m; sourceTree = "<group>"; };
-		F4FF95D5245B92E700C19C63 /* TrtcCalling-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrtcCalling-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* TrtcCalling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrtcCalling.swift; sourceTree = "<group>"; };
+		F64A35CE2632D04700FB7E66 /* TrtcCalling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrtcCalling.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,19 +58,17 @@
 				543B271985AD1C41530F1046 /* Pods-TrtcCalling.debug.xcconfig */,
 				86ADD8BC20CB9DCA155C794D /* Pods-TrtcCalling.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				F4FF95D6245B92E800C19C63 /* TrtcCalling.swift */,
-				B3E7B5891CC2AC0600A0062D /* TrtcCalling.m */,
-				F4FF95D5245B92E700C19C63 /* TrtcCalling-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				1E07EEE4660B2C1FCBAE49E6 /* Pods */,
 				7501AA0D4EAC3963F3586D71 /* Frameworks */,
+				B3E7B5891CC2AC0600A0062D /* TrtcCalling.m */,
+				F64A35CE2632D04700FB7E66 /* TrtcCalling.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF95D7245B92E800C19C63 /* TrtcCalling.swift in Sources */,
+				F64A35CC2632CFFE00FB7E66 /* TrtcCalling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
