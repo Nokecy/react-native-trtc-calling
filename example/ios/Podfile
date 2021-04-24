@@ -8,8 +8,8 @@ target 'TrtcCallingExample' do
 
   use_react_native!(:path => config["reactNativePath"])
 
-      pod 'react-native-trtc-calling', :path => '../..'
-  
+     pod 'react-native-trtc-calling', :path => '../..'
+
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and

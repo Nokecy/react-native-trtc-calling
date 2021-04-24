@@ -41,7 +41,8 @@
             NSString *data = [TRTCCallingUtils dictionary2JsonStr:param];
             if (isGroup) {
                 @weakify(self)
-                callID = [[V2TIMManager sharedInstance] inviteInGroup:realModel.groupid inviteeList:realModel.invitedList data:data timeout:SIGNALING_EXTRA_KEY_TIME_OUT succ:^{
+              
+              callID = [[V2TIMManager sharedInstance] inviteInGroup:realModel.groupid inviteeList:realModel.invitedList data:data onlineUserOnly:false timeout:SIGNALING_EXTRA_KEY_TIME_OUT succ:^{
                     @strongify(self)
                     // 发起 Apns 推送,群组的邀请，需要单独对每个被邀请人发起推送
                     for (NSString *invitee in realModel.invitedList) {
@@ -56,7 +57,7 @@
                 self.callID = callID;
             } else {
                 @weakify(self)
-                callID = [[V2TIMManager sharedInstance] invite:realModel.invitedList.firstObject data:data timeout:SIGNALING_EXTRA_KEY_TIME_OUT succ:^{
+              callID = [[V2TIMManager sharedInstance] invite:realModel.invitedList.firstObject data:data onlineUserOnly:false offlinePushInfo:false timeout:SIGNALING_EXTRA_KEY_TIME_OUT succ:^{
                     @strongify(self)
                     // 发起 Apns 推送
                     [self sendAPNsForCall:realModel.invitedList.firstObject inviteeList:realModel.invitedList callID:self.callID groupid:realModel.groupid roomid:realModel.roomid];
@@ -123,7 +124,7 @@
                 NSString *data = [TRTCCallingUtils dictionary2JsonStr:param];
                 // 这里发结束事件的时候，inviteeList 已经为 nil 了，可以伪造一个被邀请用户，把结束的信令发到群里展示。
                 // timeout 这里传 0，结束的事件不需要做超时检测
-                callID = [[V2TIMManager sharedInstance] inviteInGroup:realModel.groupid inviteeList:@[@"inviteeList"] data:data timeout:0 succ:nil fail:^(int code, NSString *desc) {
+                callID = [[V2TIMManager sharedInstance] inviteInGroup:realModel.groupid inviteeList:@[@"inviteeList"] data:data onlineUserOnly:false timeout:0 succ:nil fail:^(int code, NSString *desc) {
                     if ([self canDelegateRespondMethod:@selector(onError:msg:)]) {
                         [self.delegate onError:code msg:desc];
                     };
@@ -133,7 +134,7 @@
                     NSDate *now = [NSDate date];
                     param[SIGNALING_EXTRA_KEY_CALL_END] = @((UInt64)[now timeIntervalSince1970] - self.startCallTS);
                     NSString *data = [TRTCCallingUtils dictionary2JsonStr:param];
-                    callID = [[V2TIMManager sharedInstance] invite:receiver data:data timeout:0 succ:nil fail:^(int code, NSString *desc) {
+                    callID = [[V2TIMManager sharedInstance] invite:receiver data:data onlineUserOnly:false offlinePushInfo:false timeout:0 succ:nil fail:^(int code, NSString *desc) {
                         if ([self canDelegateRespondMethod:@selector(onError:msg:)]) {
                             [self.delegate onError:code msg:desc];
                         };
@@ -188,6 +189,7 @@
     V2TIMOfflinePushInfo *info = [[V2TIMOfflinePushInfo alloc] init];
     info.desc = @"您有一个通话请求";
     info.ext = [TRTCCallingUtils dictionary2JsonStr:extParam];
+    info.iOSSound = @"audio.caf";
     V2TIMMessage *msg = [[V2TIMManager sharedInstance] createCustomMessage:[TRTCCallingUtils dictionary2JsonData:@{@"version" : @(Version) , @"businessID" : @"av_call"}]];
     // 针对每个被邀请成员单独邀请
     [[V2TIMManager sharedInstance] sendMessage:msg receiver:receiver groupID:nil priority:V2TIM_PRIORITY_HIGH onlineUserOnly:YES offlinePushInfo:info progress:nil succ:nil fail:nil];

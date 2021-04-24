@@ -1,6 +1,6 @@
-#import "TrtcCalling.h"
+#import "TrtcCallingManage.h"
 
-@implementation TrtcCalling
+@implementation TrtcCallingManage
 
 RCT_EXPORT_MODULE()
 

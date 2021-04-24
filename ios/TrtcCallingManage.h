@@ -1,5 +1,5 @@
 #import <React/RCTBridgeModule.h>
 
-@interface TrtcCalling : NSObject <RCTBridgeModule>
+@interface TrtcCallingManage : NSObject <RCTBridgeModule>
 
 @end

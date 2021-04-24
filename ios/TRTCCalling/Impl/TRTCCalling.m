@@ -167,6 +167,7 @@
 // 接受当前通话
 - (void)accept {
     [self enterRoom];
+    [[TRTCCloud sharedInstance] startLocalAudio];//开启麦克风
     [self invite:self.curGroupID.length > 0 ? self.curGroupID : self.curSponsorForMe action:CallAction_Accept model:nil];
     [self.curInvitingList removeObject:[TRTCCallingUtils loginUser]];
 }
@@ -282,12 +283,15 @@
     [[TRTCCloud sharedInstance] setVideoEncoderParam:videoEncParam];
     
     [[TRTCCloud sharedInstance] setDelegate:self];
-    [[TRTCCloud sharedInstance] enterRoom:param appScene:TRTCAppSceneVideoCall];
-    [[TRTCCloud sharedInstance] startLocalAudio];
-    [[TRTCCloud sharedInstance] enableAudioVolumeEvaluation:300];
+    [[TRTCCloud sharedInstance] enterRoom:param appScene:TRTCAppSceneAudioCall];
+    [[TRTCCloud sharedInstance] setAudioRoute: TRTCAudioModeEarpiece];
     self.isMicMute = NO;
-    self.isHandsFreeOn = YES;
+    self.isHandsFreeOn = NO;
     self.isInRoom = YES;
+}
+
+- (void)startLocalAudio {
+    [[TRTCCloud sharedInstance] startLocalAudio];
 }
 
 - (void)quitRoom {
@@ -295,7 +299,7 @@
     [[TRTCCloud sharedInstance] stopLocalPreview];
     [[TRTCCloud sharedInstance] exitRoom];
     self.isMicMute = NO;
-    self.isHandsFreeOn = YES;
+    self.isHandsFreeOn = NO;
     self.isInRoom = NO;
 }
 

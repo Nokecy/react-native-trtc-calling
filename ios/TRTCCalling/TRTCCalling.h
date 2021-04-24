@@ -77,6 +77,9 @@ NS_SWIFT_NAME(groupCall(userIDs:type:groupID:));
 /// 主动挂断通话
 - (void)hangup;
 
+///开启本地麦克风
+- (void)startLocalAudio;
+
 ///开启远程用户视频渲染
 - (void)startRemoteView:(NSString *)userId view:(UIView *)view
 NS_SWIFT_NAME(startRemoteView(userId:view:));
