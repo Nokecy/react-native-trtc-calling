@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-class TrtcCallingPackage implements ReactPackage {
+class TRTCCallingPackage implements ReactPackage {
      @Override
   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
     return Collections.emptyList();
@@ -21,7 +21,7 @@ class TrtcCallingPackage implements ReactPackage {
                               ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
 
-    modules.add(new TrtcCallingModule(reactContext));
+    modules.add(new TRTCCallingModule(reactContext));
 
     return modules;
   }

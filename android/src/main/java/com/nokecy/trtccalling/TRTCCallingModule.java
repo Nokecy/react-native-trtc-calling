@@ -17,10 +17,10 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import java.util.List;
 import java.util.Map;
 
-public class TrtcCallingModule extends ReactContextBaseJavaModule implements TRTCCallingDelegate {
+public class TRTCCallingModule extends ReactContextBaseJavaModule implements TRTCCallingDelegate {
   private static ReactApplicationContext reactContext;
 
-  public TrtcCallingModule(ReactApplicationContext context) {
+  public TRTCCallingModule(ReactApplicationContext context) {
     super(context);
     reactContext = context;
   }
