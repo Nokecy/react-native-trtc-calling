@@ -1,5 +1,15 @@
-#import <React/RCTBridgeModule.h>
+//
+//  TRTCCallingManager.h
+//  ACM
+//
+//  Created by 黎剑锋 on 2020/12/9.
+//
 
-@interface TrtcCallingManage : NSObject <RCTBridgeModule>
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+#import "TRTCCalling/TRTCCalling.h"
+#import "TRTCCalling/TRTCCallingDelegate.h"
+
+@interface TRTCCallingManager : RCTEventEmitter<RCTBridgeModule, TRTCCallingDelegate>
 
 @end
