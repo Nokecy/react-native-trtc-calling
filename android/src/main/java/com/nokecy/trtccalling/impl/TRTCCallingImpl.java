@@ -1,4 +1,4 @@
-package com.reactnativetrtccalling.impl;
+package com.nokecy.trtccalling.impl;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,14 +19,14 @@ import com.tencent.imsdk.v2.V2TIMSignalingListener;
 import com.tencent.imsdk.v2.V2TIMUserFullInfo;
 import com.tencent.imsdk.v2.V2TIMValueCallback;
 import com.tencent.liteav.beauty.TXBeautyManager;
-import com.reactnativetrtccalling.TRTCCalling;
-import com.reactnativetrtccalling.TRTCCallingDelegate;
-import com.reactnativetrtccalling.impl.base.CallModel;
-import com.reactnativetrtccalling.impl.base.MessageCustom;
-import com.reactnativetrtccalling.impl.base.OfflineMessageBean;
-import com.reactnativetrtccalling.impl.base.OfflineMessageContainerBean;
-import com.reactnativetrtccalling.impl.base.TRTCInternalListenerManager;
-import com.reactnativetrtccalling.impl.base.TRTCLogger;
+import com.nokecy.trtccalling.TRTCCalling;
+import com.nokecy.trtccalling.TRTCCallingDelegate;
+import com.nokecy.trtccalling.impl.base.CallModel;
+import com.nokecy.trtccalling.impl.base.MessageCustom;
+import com.nokecy.trtccalling.impl.base.OfflineMessageBean;
+import com.nokecy.trtccalling.impl.base.OfflineMessageContainerBean;
+import com.nokecy.trtccalling.impl.base.TRTCInternalListenerManager;
+import com.nokecy.trtccalling.impl.base.TRTCLogger;
 import com.tencent.rtmp.ui.TXCloudVideoView;
 import com.tencent.trtc.TRTCCloud;
 import com.tencent.trtc.TRTCCloudDef;

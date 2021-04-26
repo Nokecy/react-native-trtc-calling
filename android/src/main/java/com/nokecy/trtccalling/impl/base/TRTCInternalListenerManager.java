@@ -1,6 +1,6 @@
-package com.reactnativetrtccalling.impl.base;
+package com.nokecy.trtccalling.impl.base;
 
-import com.reactnativetrtccalling.TRTCCallingDelegate;
+import com.nokecy.trtccalling.TRTCCallingDelegate;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

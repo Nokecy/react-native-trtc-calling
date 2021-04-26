@@ -1,8 +1,8 @@
-package com.reactnativetrtccalling;
+package com.nokecy.trtccalling;
 
 import android.content.Context;
 
-import com.reactnativetrtccalling.impl.TRTCCallingImpl;
+import com.nokecy.trtccalling.impl.TRTCCallingImpl;
 import com.tencent.rtmp.ui.TXCloudVideoView;
 
 import java.util.List;

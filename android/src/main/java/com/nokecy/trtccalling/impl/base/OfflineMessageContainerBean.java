@@ -1,4 +1,4 @@
-package com.reactnativetrtccalling.impl.base;
+package com.nokecy.trtccalling.impl.base;
 
 /**
  * 为什么离线消息要做两层嵌套，主要是因为后台在携带离线数据时的包装不一样

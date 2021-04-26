@@ -1,4 +1,4 @@
-package com.reactnativetrtccalling.impl.base;
+package com.nokecy.trtccalling.impl.base;
 
 public class MessageCustom {
     public static final String BUSINESS_ID_GROUP_CREATE = "group_create";

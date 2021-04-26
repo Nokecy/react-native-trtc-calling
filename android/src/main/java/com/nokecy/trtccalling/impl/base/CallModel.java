@@ -1,4 +1,4 @@
-package com.reactnativetrtccalling.impl.base;
+package com.nokecy.trtccalling.impl.base;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;

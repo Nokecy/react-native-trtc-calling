@@ -1,4 +1,4 @@
-package com.reactnativetrtccalling;
+package com.nokecy.trtccalling;
 
 import java.util.List;
 import java.util.Map;
