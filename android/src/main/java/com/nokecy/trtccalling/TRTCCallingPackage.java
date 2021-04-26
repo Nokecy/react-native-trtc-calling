@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-class TRTCCallingPackage implements ReactPackage {
+public class TRTCCallingPackage implements ReactPackage {
      @Override
   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
     return Collections.emptyList();
