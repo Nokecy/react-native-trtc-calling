@@ -61,3 +61,5 @@ lib/
 
 # CocoaPods
 /ios/Pods/
+
+.env
