@@ -906,7 +906,7 @@ public class TRTCCallingImpl extends TRTCCalling {
                 customMap.put(CallModel.SIGNALING_EXTRA_KEY_ROOM_ID, realCallModel.roomId);
                 String dialingDataStr = new Gson().toJson(customMap);
                 if (isGroup) {
-                    callID = V2TIMManager.getSignalingManager().inviteInGroup(groupId, realCallModel.invitedList, dialingDataStr, TIME_OUT_COUNT, new V2TIMCallback() {
+                    callID = V2TIMManager.getSignalingManager().inviteInGroup(groupId,realCallModel.invitedList, dialingDataStr,false, TIME_OUT_COUNT, new V2TIMCallback() {
                         @Override
                         public void onError(int code, String desc) {
                             TRTCLogger.e(TAG, "inviteInGroup callID:" + realCallModel.callId + ", error:" + code + " desc:" + desc);
@@ -922,7 +922,7 @@ public class TRTCCallingImpl extends TRTCCalling {
                         }
                     });
                 } else {
-                    callID = V2TIMManager.getSignalingManager().invite(receiver, dialingDataStr, TIME_OUT_COUNT, new V2TIMCallback() {
+                    callID = V2TIMManager.getSignalingManager().invite(receiver, dialingDataStr,false,new V2TIMOfflinePushInfo(), TIME_OUT_COUNT, new V2TIMCallback() {
                         @Override
                         public void onError(int code, String desc) {
                             TRTCLogger.e(TAG, "invite  callID:" + realCallModel.callId + ",error:" + code + " desc:" + desc);
@@ -1004,7 +1004,7 @@ public class TRTCCallingImpl extends TRTCCalling {
                 customMap.put(CallModel.SIGNALING_EXTRA_KEY_CALL_END, realCallModel.duration);
                 String hangupMapStr = new Gson().toJson(customMap);
                 if (isGroup) {
-                    V2TIMManager.getSignalingManager().inviteInGroup(groupId, realCallModel.invitedList, hangupMapStr, 0, new V2TIMCallback() {
+                    V2TIMManager.getSignalingManager().inviteInGroup(groupId, realCallModel.invitedList, hangupMapStr, false, TIME_OUT_COUNT,new V2TIMCallback() {
                         @Override
                         public void onError(int code, String desc) {
                             TRTCLogger.e(TAG, "inviteInGroup-->hangup callID: " + realCallModel.callId + ", error:" + code + " desc:" + desc);
@@ -1016,7 +1016,7 @@ public class TRTCCallingImpl extends TRTCCalling {
                         }
                     });
                 } else {
-                    V2TIMManager.getSignalingManager().invite(receiver, hangupMapStr, 0, new V2TIMCallback() {
+                    V2TIMManager.getSignalingManager().invite(receiver, hangupMapStr, true,new V2TIMOfflinePushInfo(),TIME_OUT_COUNT, new V2TIMCallback() {
                         @Override
                         public void onError(int code, String desc) {
                             TRTCLogger.e(TAG, "invite-->hangup callID: " + realCallModel.callId + ", error:" + code + " desc:" + desc);
