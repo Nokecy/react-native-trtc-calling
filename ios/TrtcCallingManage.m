@@ -5,7 +5,7 @@
 //  Created by 黎剑锋 on 2020/12/9.
 //
 
-#import "TRTCCallingManager.h"
+#import "TrtcCallingManage.h"
 
 @implementation TRTCCallingManager
 
