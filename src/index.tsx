@@ -1,51 +1,51 @@
 import { NativeModules, NativeEventEmitter } from 'react-native';
-const { TRTCCallingManager } = NativeModules;
-const TRTCCallingEventEmitter = new NativeEventEmitter(TRTCCallingManager);
+const { TrtcCallingManager } = NativeModules;
+const TRTCCallingEventEmitter = new NativeEventEmitter(TrtcCallingManager);
 
-export { TRTCCallingManager, TRTCCallingEventEmitter };
+export { TrtcCallingManager, TRTCCallingEventEmitter };
 
 export default class TRTCCallingNative {
   static genTestUserSig(userId: string): Promise<any> {
-    return TRTCCallingManager.genTestUserSig(userId);
+    return TrtcCallingManager.genTestUserSig(userId);
   }
 
   static init(imBusinessID: string, deviceToken: string) {
-    TRTCCallingManager.init(imBusinessID, deviceToken);
+    TrtcCallingManager.init(imBusinessID, deviceToken);
   }
 
   static login(options: { sdkAppId: number; userId: string; userSig: string }) {
-    return TRTCCallingManager.login(options);
+    return TrtcCallingManager.login(options);
   }
 
   static logout() {
-    TRTCCallingManager.logout();
+    TrtcCallingManager.logout();
   }
 
   static call(options: { userId: string; callType: number }) {
-    TRTCCallingManager.call(options);
+    TrtcCallingManager.call(options);
   }
 
   static startLocalAudio() {
-    TRTCCallingManager.startLocalAudio();
+    TrtcCallingManager.startLocalAudio();
   }
 
   static accept() {
-    TRTCCallingManager.accept();
+    TrtcCallingManager.accept();
   }
 
   static hangup() {
-    TRTCCallingManager.hangup();
+    TrtcCallingManager.hangup();
   }
 
   static reject() {
-    TRTCCallingManager.reject();
+    TrtcCallingManager.reject();
   }
 
   static setMicMute(isMicMute: boolean) {
-    TRTCCallingManager.setMicMute(isMicMute);
+    TrtcCallingManager.setMicMute(isMicMute);
   }
 
   static setHandsFree(isHandsFree: boolean) {
-    TRTCCallingManager.setHandsFree(isHandsFree);
+    TrtcCallingManager.setHandsFree(isHandsFree);
   }
 }

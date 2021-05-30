@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import TrtcCalling from 'react-native-trtc-calling';
+import TRTCCallingNative,{} from 'react-native-trtc-calling';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    TrtcCalling.multiply(3, 7).then(setResult);
+    TRTCCallingNative.accept();
   }, []);
 
   return (

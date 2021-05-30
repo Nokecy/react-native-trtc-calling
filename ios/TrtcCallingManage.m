@@ -7,7 +7,7 @@
 
 #import "TrtcCallingManage.h"
 
-@implementation TRTCCallingManager
+@implementation TrtcCallingManager
 
 RCT_EXPORT_MODULE();
 

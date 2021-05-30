@@ -10,6 +10,6 @@
 #import "TRTCCalling/TRTCCalling.h"
 #import "TRTCCalling/TRTCCallingDelegate.h"
 
-@interface TRTCCallingManager : RCTEventEmitter<RCTBridgeModule, TRTCCallingDelegate>
+@interface TrtcCallingManager : RCTEventEmitter<RCTBridgeModule, TRTCCallingDelegate>
 
 @end
