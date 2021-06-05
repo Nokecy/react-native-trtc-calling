@@ -34,7 +34,7 @@ public class TRTCCallingModule extends ReactContextBaseJavaModule implements TRT
   @NonNull
   @Override
   public String getName() {
-    return "TRTCCallingManager";
+    return "TrtcCallingManager";
   }
 
   @ReactMethod
