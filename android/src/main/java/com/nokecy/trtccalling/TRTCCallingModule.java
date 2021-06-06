@@ -128,7 +128,7 @@ public class TRTCCallingModule extends ReactContextBaseJavaModule implements TRT
   public void onInvited(String sponsor, List<String> userIdList, boolean isFromGroup, int callType) {
     WritableMap map = Arguments.createMap();
     map.putString("sponsor", sponsor);
-    map.putArray("userIdList", Arguments.fromArray(userIdList));
+//    map.putArray("userIdList", Arguments.fromArray(userIdList));
     map.putBoolean("isFromGroup", isFromGroup);
     map.putInt("callType", callType);
     sendEvent(reactContext, "onInvited", map);
@@ -198,7 +198,7 @@ public class TRTCCallingModule extends ReactContextBaseJavaModule implements TRT
   public void onUserVideoAvailable(String userId, boolean isVideoAvailable) {
     WritableMap map = Arguments.createMap();
     map.putString("uid", userId);
-    map.putBoolean("isVideoAvailable", isVideoAvailable);
+    map.putBoolean("available", isVideoAvailable);
     sendEvent(reactContext, "onUserVideoAvailable", map);
   }
 
@@ -206,7 +206,7 @@ public class TRTCCallingModule extends ReactContextBaseJavaModule implements TRT
   public void onUserAudioAvailable(String userId, boolean isVideoAvailable) {
     WritableMap map = Arguments.createMap();
     map.putString("uid", userId);
-    map.putBoolean("isVideoAvailable", isVideoAvailable);
+    map.putBoolean("available", isVideoAvailable);
     sendEvent(reactContext, "onUserAudioAvailable", map);
   }
 

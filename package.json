@@ -1,6 +1,6 @@
 {
   "name": "react-native-trtc-calling",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "trtcCalling react native 组件",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
